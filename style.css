@@ -22,17 +22,12 @@ h1 {
 }
 
 h1 span{
-    color: limegreen;
+    color: white;
 }
 
 hr{
     margin: 10px 0px;
 }
-
-.github-fork-ribbon:before{
-    background: limegreen !important;
-}
-
 
 #uploadImage{
     border: 1px dashed rgba(0,0,0,0.5);
