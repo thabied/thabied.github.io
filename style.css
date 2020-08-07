@@ -7,7 +7,7 @@
 html,body{
     width: 95%;
     margin: 50px auto;
-    background: rgb(210, 214, 209);
+    background: rgb(100, 100, 100);
 }
 
 @media (min-width: 768px){

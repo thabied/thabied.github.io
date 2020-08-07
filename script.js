@@ -79,7 +79,7 @@ async function fetchData(){
 async function initialize() {
     let status = document.querySelector('.init_status')
     status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
-    model = await tf.loadLayersModel('./tensorflowjs-model/model.json');
+    model = await tf.loadLayersModel('./tensorflowjs_model/model.json');
     status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
 }
 
