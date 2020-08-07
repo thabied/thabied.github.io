@@ -15,7 +15,7 @@ let progressBar =
 
 // Loading the class_indices.json file which contains the Class names and encoded index
 async function fetchData(){
-     let response = await fetch('./class_indices.json');
+     let response = await fetch('class_indices.json');
      let data = await response.json();
      data = JSON.stringify(data);
      data = JSON.parse(data);
@@ -27,7 +27,7 @@ async function initialize() {
     let status = document.querySelector('.init_status')
     status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
     // Load the Tensorflow.js model from the model.json file
-    model = await tf.loadLayersModel('./tensorflowjs_model/model.json');
+    model = await tf.loadLayersModel('/tensorflowjs_model/model.json');
     status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
 }
 
