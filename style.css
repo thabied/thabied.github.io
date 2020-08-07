@@ -75,7 +75,7 @@ img{
 
 .progress > .inner {
     position: absolute;
-    color: limegreen;
+    color: white;
 }
 
 .progress > svg {
