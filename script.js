@@ -18,6 +18,7 @@ let boxResult = document.querySelector('.box-result')
             let data = await response.json();
             data = JSON.stringify(data);
             data = JSON.parse(data);
+            status.innerHTML = 'Fetched Labels <span class="fa fa-spinner fa-spin"></span>'
             return data;
         }
 
