@@ -19,10 +19,7 @@ let boxResult = document.querySelector('.box-result')
             data = JSON.stringify(data);
             data = JSON.parse(data);
             return data;
-            let status = document.querySelector('.init_status')
-            status.innerHTML = 'Fetching Classes <span class="fa fa-spinner fa-spin"></span>'
-            model = await tf.loadLayersModel('./class_indices.json');
-            status.innerHTML = 'Classes Loaded Successfully  <span class="fa fa-check"></span>'
+
         }
 
          // here the data will be return.
@@ -31,7 +28,7 @@ let boxResult = document.querySelector('.box-result')
         // Initialize/Load model
         async function initialize() {
             let status = document.querySelector('.init_status')
-            status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
+            status.innerHTML = 'Fetching .... <span class="fa fa-spinner fa-spin"></span>'
             model = await tf.loadLayersModel('./tensorflowjs_model/model.json');
             status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
         }
