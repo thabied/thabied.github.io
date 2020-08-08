@@ -19,6 +19,10 @@ let boxResult = document.querySelector('.box-result')
             data = JSON.stringify(data);
             data = JSON.parse(data);
             return data;
+            let status = document.querySelector('.init_status')
+            status.innerHTML = 'Fetching Classes <span class="fa fa-spinner fa-spin"></span>'
+            model = await tf.loadLayersModel('./class_indices.json');
+            status.innerHTML = 'Classes Loaded Successfully  <span class="fa fa-check"></span>'
         }
 
          // here the data will be return.

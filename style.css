@@ -19,6 +19,7 @@ html,body{
 h1 {
     margin: 10px auto;
     text-transform: uppercase;
+    color: white
 }
 
 h1 span{
