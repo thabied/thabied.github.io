@@ -43,10 +43,14 @@ let boxResult = document.querySelector('.box-result')
 
             fetchData().then((data)=>
                 {
-                    predicted_class = prediction
+                    predicted_class = tf.argMax(prediction)
+                    if (predicted_class > 0.5) {
+                      answer='Positive'
+                    } else {
+                      answer='Negative'
+                    }
 
-                    class_idx = Array.from(predicted_class.dataSync())[0]
-                    document.querySelector('.pred_class').innerHTML = data[class_idx]
+                    document.querySelector('.pred_class').innerHTML = answer
                     document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% SURE`
                     console.log(data)
                     console.log(data[class_idx])
@@ -58,8 +62,6 @@ let boxResult = document.querySelector('.box-result')
             );
 
         }
-
-
 
         fileUpload.addEventListener('change', function(e){
 
