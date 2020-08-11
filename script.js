@@ -43,7 +43,7 @@ let boxResult = document.querySelector('.box-result')
 
             fetchData().then((data)=>
                 {
-                    predicted_class = tf.argMax(prediction)
+                    predicted_class = prediction
 
                     class_idx = Array.from(predicted_class.dataSync())[0]
                     document.querySelector('.pred_class').innerHTML = data[class_idx]
