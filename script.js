@@ -29,7 +29,7 @@ let boxResult = document.querySelector('.box-result')
         async function initialize() {
             let status = document.querySelector('.init_status')
             status.innerHTML = 'Fetching .... <span class="fa fa-spinner fa-spin"></span>'
-            model = await tf.loadGraphModel('./tensorflowjs_model2/model.json');
+            model = await tf.loadGraphModel('./tensorflowjs_model2');
             status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
         }
 
