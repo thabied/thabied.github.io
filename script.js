@@ -7,7 +7,7 @@ let boxResult = document.querySelector('.box-result')
 
         let progressBar =
             new ProgressBar.Circle('#progress', {
-            color: 'limegreen',
+            color: 'white',
             strokeWidth: 10,
             duration: 2000, // milliseconds
             easing: 'easeInOut'
@@ -44,13 +44,8 @@ let boxResult = document.querySelector('.box-result')
             fetchData().then((data)=>
                 {
                     predicted_class = tf.argMax(prediction)
-                    if (predicted_class > 0.5) {
-                      answer='Positive'
-                    } else {
-                      answer='Negative'
-                    }
-
-                    document.querySelector('.pred_class').innerHTML = answer
+                    class_idx = Array.from(predicted_class.dataSync())[0]
+                    document.querySelector('.pred_class').innerHTML = data[class_idx]
                     document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% SURE`
                     console.log(data)
                     console.log(data[class_idx])
