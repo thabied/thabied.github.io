@@ -57,7 +57,7 @@ let boxResult = document.querySelector('.box-result')
                     // console.log(data[class_idx])
                     console.log(prediction)
 
-                    progressBar.animate(prediction[class_idx]-0.005); // percent
+                    progressBar.animate(prediction-0.005); // percent
 
                 }
             );
