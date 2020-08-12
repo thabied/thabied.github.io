@@ -43,12 +43,18 @@ let boxResult = document.querySelector('.box-result')
 
             fetchData().then((data)=>
                 {
-                    predicted_class = tf.argMax(prediction)
-                    class_idx = Array.from(predicted_class.dataSync())[0]
-                    document.querySelector('.pred_class').innerHTML = data[class_idx]
-                    document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% SURE`
+                    if (prediction>0.5){
+                      document.querySelector('.pred_class').innerHTML = "Positive"
+                    } else {
+                      document.querySelector('.pred_class').innerHTML = "Negative"
+                    }
+                    document.querySelector('.inner').innerHTML = `${parseFloat(prediction*100).toFixed(2)}% Sure`
+                    // predicted_class = tf.argMax(prediction)
+                    // class_idx = Array.from(predicted_class.dataSync())[0]
+                    // document.querySelector('.pred_class').innerHTML = data[class_idx]
+                    // document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% SURE`
                     console.log(data)
-                    console.log(data[class_idx])
+                    // console.log(data[class_idx])
                     console.log(prediction)
 
                     progressBar.animate(prediction[class_idx]-0.005); // percent
