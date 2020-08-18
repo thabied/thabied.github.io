@@ -45,10 +45,12 @@ let boxResult = document.querySelector('.box-result')
                 {
                     if (prediction>0.5){
                       document.querySelector('.pred_class').innerHTML = "Positive"
+                      document.querySelector('.inner').innerHTML = `${parseFloat(prediction*100).toFixed(2)}% Sure`
                     } else {
                       document.querySelector('.pred_class').innerHTML = "Negative"
+                      document.querySelector('.inner').innerHTML = `${parseFloat((1-prediction)*100).toFixed(2)}% Sure`
                     }
-                    document.querySelector('.inner').innerHTML = `${parseFloat(prediction*100).toFixed(2)}% Sure`
+                    // document.querySelector('.inner').innerHTML = '${parseFloat(prediction*100).toFixed(2)}% Sure'
                     // predicted_class = tf.argMax(prediction)
                     // class_idx = Array.from(predicted_class.dataSync())[0]
                     // document.querySelector('.pred_class').innerHTML = data[class_idx]
